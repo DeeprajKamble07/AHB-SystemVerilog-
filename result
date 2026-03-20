@@ -1,0 +1,153 @@
+[2026-03-20 11:43:20 UTC] vcs -full64 -licqueue '-timescale=1ns/1ns' '+vcs+flush+all' '+warn=all' '-sverilog' design.sv testbench.sv  && ./simv +vcs+lic+wait  
+                         Chronologic VCS (TM)
+       Version X-2025.06-SP1_Full64 -- Fri Mar 20 07:43:22 2026
+
+                    Copyright (c) 1991 - 2025 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Warning : License for product VCS-BASE-COMPILE will expire within 11 days, on: 30-mar-2026.
+
+If you would like to temporarily disable this message, set 
+ the VCS_LIC_EXPIRE_WARNING environment variable to the number of days
+before expiration that you want this message to start (the minimum is 0).
+Parsing design file 'design.sv'
+Parsing design file 'testbench.sv'
+Parsing included file 'interface.sv'.
+Back to file 'testbench.sv'.
+Parsing included file 'test.sv'.
+Parsing included file 'enivornment.sv'.
+Parsing included file 'transaction.sv'.
+Back to file 'enivornment.sv'.
+Parsing included file 'generator.sv'.
+Back to file 'enivornment.sv'.
+Parsing included file 'driver.sv'.
+Back to file 'enivornment.sv'.
+Parsing included file 'monitor.sv'.
+Back to file 'enivornment.sv'.
+Parsing included file 'reference.sv'.
+Back to file 'enivornment.sv'.
+Parsing included file 'scoreboard.sv'.
+Back to file 'enivornment.sv'.
+Back to file 'test.sv'.
+Back to file 'testbench.sv'.
+Top Level Modules:
+       tb
+TimeScale is 1 ns / 1 ns
+Notice: Ports coerced to inout, use -notice for details
+Starting vcs inline pass...
+5 modules and 0 UDP read.
+recompiling package vcs_paramclassrepository
+recompiling module top
+recompiling module intf
+recompiling module test
+recompiling module tb
+All of 5 modules done
+Warning : License for product VCS-BASE-COMPILE will expire within 11 days, on: 30-mar-2026.
+
+If you would like to temporarily disable this message, set 
+ the VCS_LIC_EXPIRE_WARNING environment variable to the number of days
+before expiration that you want this message to start (the minimum is 0).
+rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+if [ -x ../simv ]; then chmod a-x ../simv; fi
+g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/apps/vcsmx/vcs/X-2025.06-SP1/linux64/lib -L/apps/vcsmx/vcs/X-2025.06-SP1/linux64/lib  -Wl,-rpath-link=./   objs/amcQw_d.o  _287_archive_1.so  SIM_l.o       rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o            -lvirsim -lerrorinf -lsnpsmalloc -lvfs      -lvcsnew -ldistsimclient -lsimprofile -luclinative /apps/vcsmx/vcs/X-2025.06-SP1/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive          /apps/vcsmx/vcs/X-2025.06-SP1/linux64/lib/vcs_save_restore_new.o -ldl  -lc -lm -lpthread -ldl 
+../simv up to date
+CPU time: .657 seconds to compile + .539 seconds to elab + .336 seconds to link
+Chronologic VCS simulator copyright 1991-2025
+Contains Synopsys proprietary information.
+Compiler version X-2025.06-SP1_Full64; Runtime version X-2025.06-SP1_Full64;  Mar 20 07:43 2026
+Warning : License for product VCS-BASE-RUNTIME will expire within 11 days, on: 30-mar-2026.
+
+If you would like to temporarily disable this message, set 
+ the VCS_LIC_EXPIRE_WARNING environment variable to the number of days
+before expiration that you want this message to start (the minimum is 0).
+GEN WRITE: write_top=1 addr_top=38
+[GEN]   data_top[0] addr=38  data=b36931a9
+[GEN]   data_top[1] addr=3c  data=f07b5c5b
+[GEN]   data_top[2] addr=40  data=4133dc9f
+[GEN]   data_top[3] addr=44  data=71d5511d
+[GEN] READ   write_top=0  addr_top=38
+MASTER BUF WRITE slot=0 data=b36931a9
+MASTER BUF WRITE slot=1 data=f07b5c5b
+MASTER BUF WRITE slot=2 data=4133dc9f
+MASTER SEND DATA slot=0 data=b36931a9
+MASTER BUF WRITE slot=3 data=71d5511d
+SLAVE WRITE addr=00000038 data=b36931a9
+[MON] WRITE beat[0]  addr=38  hwdata=b36931a9
+SLAVE WRITE addr=00000038 data=b36931a9
+MASTER SEND DATA slot=1 data=f07b5c5b
+[MON] WRITE beat[1]  addr=3c  hwdata=b36931a9
+SLAVE WRITE addr=0000003c data=f07b5c5b
+[MON] WRITE beat[2]  addr=40  hwdata=f07b5c5b
+SLAVE WRITE addr=0000003c data=f07b5c5b
+MASTER SEND DATA slot=2 data=4133dc9f
+[MON] WRITE beat[3]  addr=44  hwdata=f07b5c5b
+SLAVE WRITE addr=00000040 data=4133dc9f
+SLAVE WRITE addr=00000040 data=4133dc9f
+MASTER SEND DATA slot=3 data=71d5511d
+SLAVE WRITE addr=00000044 data=71d5511d
+DRV: write_top=1 addr_top=38
+[DRV]   data_top[0]=b36931a9
+[DRV]   data_top[1]=f07b5c5b
+[DRV]   data_top[2]=4133dc9f
+[DRV]   data_top[3]=71d5511d
+[REF] WRITE mem[38]=b36931a9
+[REF] WRITE mem[3c]=f07b5c5b
+[REF] WRITE mem[40]=4133dc9f
+[REF] WRITE mem[44]=71d5511d
+[SCB] --- comparison (trans 1) ---
+[SCB] WRITE transaction ? no read comparison needed
+SLAVE READ addr=00000038 data=b36931a9
+SLAVE READ addr=00000038 data=b36931a9
+[MON] READ  beat[0]  addr=38  hrdata=b36931a9
+SLAVE READ addr=0000003c data=f07b5c5b
+SLAVE READ addr=0000003c data=f07b5c5b
+[MON] READ  beat[1]  addr=3c  hrdata=f07b5c5b
+SLAVE READ addr=00000040 data=4133dc9f
+SLAVE READ addr=00000040 data=4133dc9f
+[MON] READ  beat[2]  addr=40  hrdata=4133dc9f
+SLAVE READ addr=00000044 data=71d5511d
+DRV: write_top=0 addr_top=38
+[DRV]   data_top[0]=0
+[DRV]   data_top[1]=0
+[DRV]   data_top[2]=0
+[DRV]   data_top[3]=0
+[MON] READ  beat[3]  addr=44  hrdata=71d5511d
+REF READ: hrdata[0]=b36931a9
+REF READ: hrdata[1]=f07b5c5b
+REF READ: hrdata[2]=4133dc9f
+REF READ: hrdata[3]=71d5511d
+[SCB] --- comparison (trans 2) ---
+PASS : Beat 0 Expected=b36931a9 Actual=b36931a9
+PASS : Beat 1 Expected=f07b5c5b Actual=f07b5c5b
+PASS : Beat 2 Expected=4133dc9f Actual=4133dc9f
+PASS : Beat 3 Expected=71d5511d Actual=71d5511d
+
+========================================
+  SCOREBOARD SUMMARY
+  PASS: 4   FAIL: 0
+  *** ALL TESTS PASSED ***
+========================================
+
+$finish called from file "test.sv", line 7.
+$finish at simulation time                  355
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 355 ns
+CPU Time:      0.470 seconds;       Data structure size:   0.0Mb
+Fri Mar 20 07:43:24 2026
+Finding VCD file...
+./dump.vcd
+[2026-03-20 11:43:24 UTC] Opening EPWave...
+Done
