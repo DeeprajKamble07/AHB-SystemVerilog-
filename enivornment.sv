@@ -4,6 +4,7 @@
 `include "monitor.sv"
 `include "reference.sv"
 `include "scoreboard.sv"
+`include "coverage.sv"
 
 class enivornment;
   generator gen;
@@ -11,6 +12,7 @@ class enivornment;
   monitor mon;
   reference reff;
   scoreboard scb;
+  coverage cov;
   
   mailbox#(transaction) gen2drv;
   mailbox#(transaction) drv2scb;
@@ -33,6 +35,7 @@ class enivornment;
     mon=new(vif,mon2scb);
     reff=new(drv2rm,rm2scb);
     scb=new(rm2scb,mon2scb);
+    cov=new(vif);
   endfunction
   
   task run();
@@ -46,5 +49,6 @@ class enivornment;
     wait(scb.trans_count>=2);
     #50;
     scb.report();
+  $display("Coverage = %0.2f %%", cov.cg.get_coverage());
   endtask
 endclass
