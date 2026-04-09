@@ -12,6 +12,7 @@ module tb;
   
   top dut(.hclk(intff.hclk),.hrst(intff.hrst), .start(intff.start), .write_top(intff.write_top), .wrap_en(intff.wrap_en),.addr_top(intff.addr_top),. data_top(intff.data_top),.beat_length(intff.beat_length),.hrdata(intff.hrdata),.hready(intff.hready));
   
+  ahb_assertion dut1(.hclk(intff.hclk),.hrst(intff.hrst),.hready(intff.hready),.htrans(intff.htrans),.hwrite(intff.hwrite),.haddr(intff.haddr));
   
   assign intff.haddr= dut.haddr;
   assign intff.hwdata= dut.hwdata;
