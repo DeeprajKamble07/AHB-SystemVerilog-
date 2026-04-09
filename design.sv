@@ -270,3 +270,40 @@ ahb_slave a2(
 );
 
 endmodule
+
+
+
+
+module ahb_assertion(input hclk, hrst, hwrite, hready,
+                     input [1:0] htrans,
+                     input [31:0] haddr);
+  
+  property p1;
+    @(posedge hclk) disable iff(hrst)
+    (hready && htrans != 2'b00) |-> (htrans==2'b10 || htrans==2'b11);
+  endproperty
+  
+  assert property(p1)
+    else
+      $error("Invalid HTRANS detected");
+    
+  property p2;
+    @(posedge hclk) disable iff(hrst)
+    (!hready) |-> $stable(haddr);
+  endproperty
+    
+    assert property(p2)
+      else
+        $error("address changed when hready is 0");
+      
+      
+  property p3;
+    @(posedge hclk) disable iff(hrst)
+    (!hready) |-> $stable(hwrite);
+  endproperty
+      
+      assert property(p3)
+        else
+          $error("hwrite changed when hready is 0");
+       
+endmodule
