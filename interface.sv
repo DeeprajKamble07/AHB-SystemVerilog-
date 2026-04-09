@@ -19,6 +19,7 @@ interface intf(input logic hclk);
     input #1  hrst, start, write_top, wrap_en, addr_top, data_top, beat_length;
     input #1 hrdata, hready;
     input #1 haddr, hwdata, hwrite, htrans;
+    input #1 hsize, hburst; 
   endclocking
   
   modport drvmod(clocking drvcb, input hclk);
